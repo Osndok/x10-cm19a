@@ -1,0 +1,75 @@
+X10MMS
+
+Copyright (C) 2004 Michael LeMay
+All rights reserved
+
+Licensed under the Academic Free License version 1.2
+
+* Usage:
+
+x10mms [-v (verbose)] [-c alternate configuration file] [-d alternate device file]
+
+This package contains source code for a couple of tools that
+enable some basic functionality of the X10 CM19A RF transceiver.
+The most important tool is x10mms.  It allows you to control
+XMMS using an X10 CR12A camera control remote.  (A CR14A would
+work as well, but has only 4 recognized buttons, rather than 16.)
+To configure which functions are assigned to different keys, modify
+x10mms.conf without disturbing its general format.  Then, close
+any running instances of XMMS and start x10mms from the directory
+where it was built.  Use and enjoy!
+
+Key for functions listed in x10mms.conf:
+aot_toggle	Toggle always-on-top (doesn't work yet)
+balance_center	Perfectly center balance
+balance_left	Shift balance left by 5%
+balance_right	Shift balance right by 5%
+decrease_volume	Decrease volume by 5%
+eject		Eject media
+exit		Close player and remote interface
+increase_volume	Increase volume by 5%
+pause		Pause
+play		Play
+play_pause	Play if currently paused, pause if currently playing
+playlist_clear	Clear playlist
+playlist_next	Play next song in playlist
+playlist_prev	Play previous song in playlist
+show_jump_box	Pop up jump-to box
+show_prefs_box	Pop up the preferences box
+stop		Stop
+toggle_eq_win	Toggle equalizer visibility
+toggle_main_win	Toggle main window visibility
+toggle_pl_win	Toggle playlist visibility
+toggle_repeat	Toggle playlist looping
+toggle_shuffle	Toggle playlist randomization
+
+* Installation:
+
+I haven't taken the time to package this with autotools yet,
+so it's just a raw Makefile right now.  Make sure you have
+Boost, (http://www.boost.org/) libusb (http://libusb.sourceforge.net/)
+and XMMS installed properly in standard directories.
+
+Then, execute "make" and run the programs!  If you wish to manually install
+each program, just copy them to somewhere in your path and don't forget
+to specify the location of x10mms.conf on x10mms' command line.
+
+* Credits:
+
+Special thanks to Neil Cherry from Linux HA for his
+personal assistance and the working code he provided.  I learned much!
+He credits others, such as the javax.usb project for the special
+init codes used to recognize particular remotes.
+
+* Disclaimer:
+
+I cannot be held liable for any damage to computer or peripheral
+hardware, software, or anything else this software and the instructions
+that accompany it may affect.  I cannot be held responsible for
+time wasted using XMMS, the time wasted configuring this application
+to control XMMS, or any other time expenditure that you would like
+to blame on someone besides yourself.  (Unfortunately, I am responsible
+to myself for the time I spent writing this application :-) )
+I cannot be held liable for any inconvenience that may be caused by this
+application or the items that accompany it.  By acquiring this application
+you agree to accept all liabilities for its usage.
